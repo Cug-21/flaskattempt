@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>SayHello</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/main.css')}}">
+    </head>
+    <body>
+        <img src ="https://www.noaa.gov/sites/default/files/styles/landscape_width_1275/public/legacy/image/2019/Jun/coral%20ecosystems%20reeffish.jpg">
+        <br>
+        <form action="greet" method="post">
+        {% for message in get_flashed_messages()%}
+            <p> {{message}} </p>
+        {% endfor %}
+        <br>
+        <input type="text" name="name_input">
+        <br>
+        <input type="submit" value="GREET" id="greet">
+        </form>
+    </body>
+</html>
